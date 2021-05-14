@@ -68,7 +68,7 @@ function ChatScreen({ chat, messages }) {
       },
       { merge: true }
     );
-    if (input) {
+    if (trim(input)) {
       db.collection("chats").doc(router.query.id).collection("messages").add({
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         message: input,
